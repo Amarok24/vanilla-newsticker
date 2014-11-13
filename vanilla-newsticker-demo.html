@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!-- XHTML 5 -->
+  <head >
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5" />
+
+    <title>
+        Vanilla-NewsTicker v1.0 - DEMO
+    </title>
+
+
+<style>
+
+html {
+    min-height: 100%;
+}
+
+body {
+    background: #009bd3;
+    background: -ms-linear-gradient(45deg, #000000 0%, #009bd3 100%); /* IE10 */
+    background: linear-gradient(45deg, #000000 0%, #009bd3 100%);
+}
+
+#main * {
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}
+
+#main img {
+    border: 0;
+    display: block;
+}
+
+#main h1 {
+    font-size: 24px;
+    display: inline;
+    margin: 0;
+}
+
+#main h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#main h3 {
+    font-size: 14px;
+    line-height: normal;
+    margin: 0;
+}
+
+#main h1 small {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+#main ul {
+    list-style-type: disc;
+    text-align: left;
+    margin: 0 0 1.2em 14px;
+    padding: 0;
+}
+/*
+#main ul ul { list-style-type: none; position:relative; left: -0.5em; text-indent: -7px; margin-bottom: 0; }
+#main ul ul li:before { content: "– "; }
+*/
+#main a {
+    color: darkblue;
+    text-decoration: underline;
+    -webkit-hyphens: manual !important; -moz-hyphens: manual !important; -ms-hyphens: manual !important;
+    hyphens: manual !important;
+}
+
+#main a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+#main a[href ^="mailto"] {
+    white-space: nowrap; /* avoids wrapping after a dash */
+}
+
+#main p {
+    margin-bottom: 1em;
+}
+
+#main p:last-child {
+    margin-bottom: 0;
+}
+
+#main address {
+    font-style: normal;
+    margin: 1em 0 0 0;
+    -webkit-hyphens: manual !important; -moz-hyphens: manual !important; -ms-hyphens: manual !important;
+    hyphens: manual !important;
+}
+
+#main header {
+    padding: 0 3%;
+}
+
+#main footer {
+    padding: 0 3%;
+}
+
+/* -=-=-=- IDs -=-=-=- */
+
+#main {
+    max-width: 700px;
+    margin: 3% auto;
+    border: 1px solid #707070;
+    color: black;
+    font: 14px/17px Arial, Helvetica, sans-serif;
+    text-align: left;
+    text-shadow: none;
+    background: white;
+    position: relative;
+    -webkit-hyphens: manual; -moz-hyphens: manual; -ms-hyphens: manual; hyphens: manual;
+}
+
+
+#content {
+    padding: 3% 3%;
+}
+
+
+/* -=-=-=- CLASSES -=-=-=- */
+
+.columns {
+    margin: 0 0 1em 0;
+}
+
+.leftColumn, .rightColumn {
+    float: left;
+    width: 48%;
+    padding: 2%;
+    border: 4px solid green;
+}
+
+.rightColumn {
+    float: right;
+
+}
+
+.columns:after {
+    clear: both;
+    display: block;
+    content: " ";
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+
+/* -=-=-=- MEDIA QUERIES -=-=-=- */
+
+@media (max-width: 700px), print {
+    body {
+        background: white;
+    }
+
+    #main {
+        margin: auto;
+        border: none;
+    }
+}
+
+@media (max-width: 450px), print {
+    #main h1, #title {
+        font-size: 18px;
+    }
+    #main {
+        -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto;
+        hyphens: auto;
+    }
+    .leftColumn, .rightColumn {
+        float: none;
+        width: auto;
+        max-width: none;
+        padding-right: 0;
+    }
+}
+
+@media print {
+    .noprint {
+        display: none;
+    }
+}
+
+
+/* newsTicker styles */
+#ticker {
+    font-size: 12px;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #dadada;
+}
+#ticker ul {
+    /* will be set to "position: relative" by newsTicker script */
+    margin: 0 0 0 16px;
+    padding: 0;
+}
+/* end: newsTicker styles */
+
+</style>
+
+
+
+
+<script src="vanilla-newsticker.js"></script>
+
+<script>
+
+function init()
+{
+    var ticker = document.getElementById("ticker");
+
+    //vanillaNewsTicker(ticker, 240, 60);
+    vanillaNewsTicker(ticker, 240, 60, 200, 16, 2000);
+}
+
+
+window.addEventListener("load", init);
+
+</script>
+
+
+
+  </head>
+  <body>
+
+    <div id="main">
+
+    <header>
+        Vanilla-NewsTicker v1.0 - demo
+    </header>
+
+      <div id="content">
+
+
+
+        <div class="columns">
+
+          <div class="leftColumn">
+            <h3>
+              Left column
+            </h3>
+            <div id="ticker">
+            <ul>
+              <li>Lorem ipsum dolor sit amet  </li>
+
+              <li>Donec tristique non sapien in porta </li>
+              <li>Nulla pulvinar molestie metus, et blandit sapien pellentesque in, orci ac lobortis luctus, elit leo hendrerit est, sit amet aliquet dolor risus </li>
+              <li>Ut ac mollis justo, eu varius augue</li>
+              <li>Nam fermentum, quam nec mattis vehicula, felis nibh blandit est, ac dictum felis tortor nec sem       </li>
+
+            </ul>
+            </div>
+
+          </div><!-- .leftColumn -->
+
+          <div class="rightColumn">
+            <h3>
+              Right column
+            </h3>
+
+            <div id="ticker2">
+            <ul>
+             <li> elit leo hendrerit est, sit amet </li>
+              <li>Lorem ipsum dolor sit amet         </li>
+              <li>Donec tristique non sapien in porta        </li>
+              <li>Duis sollicitudin, orci ac lobortis luctus, elit leo hendrerit est, sit amet aliquet dolor risus a enim          </li>
+              <li>Ut ac mollis justo, eu varius augue    </li>
+            </ul>
+            </div>
+
+          </div><!-- .rightColumn -->
+
+
+        </div><!-- .columns -->
+
+
+
+
+        <address>
+          COMPANY NAME<br />
+          STREET NUMBER<br />
+          CITY STATE
+        </address>
+
+      </div><!-- #content -->
+
+      <footer>
+          FOOTER
+      </footer>
+
+    </div><!-- #main -->
+
+
+  </body>
+</html>
