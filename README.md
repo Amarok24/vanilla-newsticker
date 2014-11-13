@@ -1,4 +1,5 @@
 vanilla-newsticker
 ==================
 
-A simple newsticker with no dependencies, vanilla Javascript.
+A simple vertical newsticker with no dependencies, vanilla Javascript.
+License: GNU GPLv3
